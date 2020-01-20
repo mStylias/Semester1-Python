@@ -34,14 +34,14 @@ while True:
         print("Το προφίλ είτε δεν υπάρχει είτε δεν είναι προσβάσιμο. Προσπαθήστε ξανά")
         
 print("Γίνεται αναζήτηση, παρακαλώ περιμένετε...")
-counter = 0 #Για να σταματήσει στα 100 posts (γραμμή 21)
+counter = 0 #Για να σταματήσει στα 100 posts (γραμμή 41)
 owner = [] #H λίστα με τα ονόματα
 for post in profile.get_posts(): #Όλα τα post
-    for comment in post.get_comments(): #Τα σχόλια του κάθε post
-        owner.append(comment.owner.username) #Εισαγωγή ονόματος σχολιαστή στη λίστα
     counter += 1
     if counter > 100:
         break
+    for comment in post.get_comments(): #Τα σχόλια του κάθε post
+        owner.append(comment.owner.username) #Εισαγωγή ονόματος σχολιαστή στη λίστα
 owner.sort() #Ταξινόμηση της λίστας ώστε να βρεθεί ο χρήστης με τα περισσότερα σχόλια
 c = 1 #Μετρητής
 maxc = [] #Λίστα με όλα τα c 
